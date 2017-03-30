@@ -7,6 +7,7 @@
     <title>Apply For a Job</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet"> <!--Included CSS Files-->
     <link href="../css/sticky-footer.css" rel="stylesheet">
+     <link href="../css/styleTextFormat.css" rel="stylesheet">
     <style>/**Minor CSS changes that didnt need their own file**/       
         .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus { /*Change the color of navbar items on hover*/
             background-color: #EEEEEE;
@@ -19,6 +20,9 @@
         }
         h1{
             color: rgb(28, 158, 203);
+        }
+        .no-link{
+            color: #337ab7;
         }
     </style>
 </head>
@@ -90,14 +94,14 @@
         <div class="page-header">
                 <h1>Job Applicant Form: &nbsp; <small>Basic Application</small></h1>
         </div>
-        <ol class="breadcrumb">
+        <ol class="breadcrumb no-link">
             <li><a href="http://www.okanaganstaffing.com/job-seeker-services/job-openings/">Job Openings </a></li>
-            <li><a href="#">Apply </a></li>
-            <li><a href="#"><strong>Basic Application</strong></a></li>
-            <li><a href="#"> Job Application </a></li>
-            <li><a href="#"> Upload &amp; Submit </a></li>
+            <li>Apply</li>
+            <li><strong>Basic Application</strong></li>
+            <li>Job Application</li>
+            <li>Upload &amp; Submit</li>
         </ol>
-        <form method="POST" action="BasicForm.php">
+        <form method= "POST" action = "BasicForm.php">
             <div class="row" style="margin-top: 70px;">
                 <div class="col-sm-12">
                     <div class="well">
@@ -105,13 +109,13 @@
                             <div class="col-sm-3">
                                 <div class="form-group">
                                     <label for="jname">Job Name:</label>
-                                    <input name ="jobname" type="text" class="form-control" id="jname" placeholder="Job name" required>
+                                    <input type="text" class="form-control" id="jname"  maxlength="80"  name="jobname" placeholder="Job name" required >
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
                                     <label for="jnum">Job Number:</label>
-                                    <input name = "jobnumber" type="text" class="form-control" id="jnum" placeholder="Job number" required>
+                                    <input type="text" class="form-control" id="jnum"  maxlength="11"  name="jobnumber" placeholder="Job number" required>
                                 </div>
                             </div>
                             <div class="col-sm-6" style="padding-top: 5px;">
@@ -124,24 +128,28 @@
                 </div>
             </div>
 
-            <div class="row" style="margin-bottom: 85px;">
+            <div class="row">
                 <div class="col-sm-6"> <!--Left Side pannel for input forms-->
                     <div class="well">
                         <div class="form-group">
                             <label for="fname">First Name:</label>
-                            <input type="text" class="form-control" name="fname" placeholder="First Name" required>
+                            <input type="text" class="form-control" id ="fname" maxlength="25" name="fname" placeholder="First Name" required>
                         </div>
                         <div class="form-group">
                             <label for="lname">Last Name:</label>
-                            <input type="text" class="form-control" name="lname" placeholder="Last Name" required>
+                            <input type="text" class="form-control" id = "lname" maxlength="25"  name="lname" placeholder="Last Name" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number:</label>
-                            <input type="text" class="form-control" name="phone" placeholder="Ex: xxx-xxx-xxxx" required>
+                            <input type="text" class="form-control" id = "phone" maxlength="15"  name="phone" placeholder="Ex: xxx-xxx-xxxx" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cellPhone">Cell Phone Number:</label>
+                            <input type="text" class="form-control" id = "cellPhone" maxlength="15"  name="cellphone" placeholder="Ex: xxx-xxx-xxxx">
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" name="email" placeholder="example@address.com" required>
+                            <input type="email" class="form-control" id = "email" maxlength="50"   name="email" placeholder="example@address.com" required>
                         </div>
                     </div> <!--End Left col well-->
                 </div> <!--End Left Row-->
@@ -149,11 +157,11 @@
                     <div class="well">
                         <div class="form-group">
                             <label for="address">Street Address:</label>
-                            <input type="text" class="form-control" name="address" placeholder="Please enter your current primary address">
+                            <input type="text" class="form-control" id = "address"  maxlength="25"  name="address" placeholder="Please enter your current primary address">
                         </div>
                         <div class="form-group">
                             <label for="city">City:</label>
-                            <input type="text" class="form-control" name="city" placeholder="City">
+                            <input type="text" class="form-control" id = "city" maxlength="25"   name="city" placeholder="City">
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
@@ -180,34 +188,59 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="postal">Postal Code:</label>
-                                    <input type="text" class="form-control" name="postal" placeholder="Ex: xxx xxx" style="width: 120px;">    
+                                    <input type="text" class="form-control" id = "postal" maxlength="7" name="postal" placeholder="Ex: xxx xxx" style="width: 120px;">    
                                 </div>   
+                                
                             </div>
-                        </div> <!--End Inner Row-->
-                        
+                        </div> <!--End Inner Row-->                    
                         <div class="row">
                             <div class="col-sm-9">
                                 <div class="form-group">
-                                    <label for="contMethod">Prefered Contact Method:</label></br>
+                                    <label for="contMethod">Prefered Contact Method:</label><br/>
                                     <label class="radio-inline">
-                                        <input type="radio" name="optradio" id="contMethod">Phone
+                                        <input type="radio" name="optradio" id = "phoneOpt" value="Phone">Phone
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="optradio">Email
+                                        <input type="radio" name="optradio" id = "cellPhoneOpt"  value ="CellPhone">Cell Phone
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optradio" id = "emailOpt"   value="Email">Email
                                     </label>
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group pull-right" style="padding-top: 10px;">
-                                    <button type="submit" class="btn btn-primary" style="width: 90px;">Next</button>
-                                </div>
                             </div>
                         </div><!--End second Inner Row-->
-
-
+                        <div class="row"  style="margin-bottom: 13px;">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="howHear">How did you hear about Okanagan Staffing Services?:</label>
+                                    <select class="form-control" name="howHear" required>
+                                        <option value="" selected disabled>Please Select</option>
+                                        <option value="OKS Website">Okanagan Staffing Services website</option>
+                                        <option value="Search Engine">Search Engine</option>
+                                        <option value="Advertisement Online">Advertisement Online</option>
+                                        <option value="Advertisement Print">Advertisement Print/option>
+                                        <option value="Job Board">Job Board</option>
+                                        <option value="Refered by WorkBC">Refered by: WorkBC</option>
+                                        <option value="Refered by friend">Refered by: Friend</option>
+                                        <option value="Refered by CoWorker">Refered by: Coworker</option>
+                                        <option value="Social Media">Social Media</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </div> <!--End right col well-->
                 </div> <!--End Right Row-->
             </div> <!--End Outer Row-->
+            <div class="row" style="padding-bottom: 70px;">
+                <div class="col-sm-12">
+                    <div class="form-group pull-right" style="padding-top: 10px;">
+                        <button type="submit" class="btn btn-primary" style="width: 90px;">Next</button>
+                    </div>
+                </div>
+            </div>
         </form> <!--End Form-->
     </div> <!--End Container-->
     <!--========================= FORM BODY END =========================-->
@@ -218,8 +251,8 @@
         <div class="container" style="padding-top: 12px;">
             <div class="row">
                     <div class="col-sm-12">
-                        <span class="glyphicon glyphicon-phone" aria-hidden="true"></span><a class="foot-text" href="tel: 250-717-0506">&nbsp;250-717-0506</a>&nbsp;&nbsp;&nbsp;
-                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a class="foot-text" href="mailto: jobs@okanaganstaffing.com">&nbsp;jobs@okanaganstaffing.com</a>&nbsp;&nbsp;&nbsp;
+                        <span class="glyphicon glyphicon-phone" aria-hidden="true"></span><a class="foot-text" href="tel:250-717-0506">&nbsp;250-717-0506</a>&nbsp;&nbsp;&nbsp;
+                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a class="foot-text" href="mailto:jobs@okanaganstaffing.com">&nbsp;jobs@okanaganstaffing.com</a>&nbsp;&nbsp;&nbsp;
                         <span class="glyphicon glyphicon-globe" aria-hidden="true"></span><fade>&nbsp;1476 St. Paul Street&nbsp;&nbsp;&nbsp;</fade>
                         <span class="glyphicon glyphicon-globe" aria-hidden="true"></span><fade>&nbsp;Kelowna, BC V1Y 2E6&nbsp;&nbsp;&nbsp;</fade>
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span><a class="foot-text" href="https://www.linkedin.com/in/kevinrenwickatokanaganstaffing">&nbsp;LinkedIn</a>&nbsp;&nbsp;&nbsp;
@@ -234,5 +267,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> <!--Required script references-->
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/Ernesto_Scripts.js" ></script>
+
 </body>
 </html>
