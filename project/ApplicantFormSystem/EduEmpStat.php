@@ -33,5 +33,7 @@ else
 	$_SESSION['status4TB'] = '';
 $_SESSION['status5'] = $_POST['status5']; 
 $_SESSION['status6'] = $_POST['status6']; 
+
 header('location:areaOfExp.html');
+
 ?>

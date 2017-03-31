@@ -3,6 +3,7 @@ session_start();
 $mysqli = mysqli_connect("localhost", "OkStaff", 'staffing', "okstaff");
 include 'DBFunctionDatabase.php';
 
+
 //Function Table Creation Test
 function tableTest($temp, $query, $lineNumber){
 	if($temp->query($query) === true) {
@@ -170,6 +171,15 @@ $educationData = $educationInsertion.$education['apptID'].",'".$education['educa
 $education['studyData']."','".$education['language'].$end;
 tableInsert($mysqli, $educationData, __LINE__);
 						
+//Jobs Insert Table
+$jobs['apptID'] = $applicantID;
+$jobs['job#'] = $_SESSION['jNumber'];
+$jobs['name'] = $_SESSION['jName'];
+$jobs['date'] = '2017/01/21';
+$jobs['type'] = 'OT';
+$jobsData = $jobsInsertion.$jobs['apptID'].', '.$jobs['job#'].",'".$jobs['name']."','".$jobs['date']."','".$jobs['type'].$end;
+tableInsert($mysqli, $jobsData, __LINE__); 
+						
 //Expertise Table
 $expertise['apptID'] = $applicantID;
 $expertise['accountingEx'] = $_SESSION['accountingEx'];
@@ -316,7 +326,6 @@ $citiesData = $citiesInsertion.$cities['apptID'].",'".$cities['armstrong']."','"
 $cities['lakeCountry']."','".$cities['OKFalls']."','".$cities['oliver']."','".$cities['osoyoos']."','".$cities['oyama']."','".$cities['peachland']."','".$cities['penticton']."','".
 $cities['salmonArm']."','".$cities['sicamous']."','".$cities['summerland']."','".$cities['vernon']."','".$cities['westKelowna']."','".$cities['winfield']."','".$cities['otherCity'].$end;
 tableInsert($mysqli, $citiesData, __LINE__);
-
 																					
 //Availability Table
 $available['apptID'] = $applicantID;
@@ -358,8 +367,7 @@ $applicantReferencesData = $applicantReferencesInsertion.$references['apptID']."
 $references['referencePhone1']."','".$references['nameTitle2']."','".$references['companyName2']."','".$references['referenceEmail2']."','".$references['referencePhone2']."','".
 $references['nameTitle3']."','".$references['companyName3']."','".$references['referenceEmail3']."','".$references['referencePhone3']."','".$references['filePath'].$end;
 tableInsert($mysqli, $applicantReferencesData, __LINE__);
-
 echo '<br>applicantID: '.$applicantID;
 echo '<br>FilePath: '.$_SESSION['filePath'];
-																				
+header('location:validate.php');
 ?>

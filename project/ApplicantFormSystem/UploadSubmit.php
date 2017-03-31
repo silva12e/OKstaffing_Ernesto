@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+if(empty($_SESSION['email']))
+{
+	header('location:Error_redirect.php');
+}
+else
+{
 	//Local Variables for File Uploading
  	$email = $_SESSION['email'];
  	$firstName = $_SESSION['fName'];
@@ -123,4 +129,5 @@ $filePath = 'Applicant_Documents/'.$email.'_'.$firstName.''.$lastName;
 $_SESSION['filePath'] = $filePath;
 
 header("location:SubmitDB.php");
+}
 ?>

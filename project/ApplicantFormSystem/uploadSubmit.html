@@ -171,7 +171,7 @@
                             <div class="fileinput fileinput-new" data-provides="fileinput" style="margin-top: 10px;">
                                 <span class="btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span>
                                 
-                                <input type="file" name="File1">
+                                <input type="file" name="File1" onchange="ValidateSingleInput(this);">
                                 
                                 </span>
                                 <span class="fileinput-filename"></span>
@@ -183,7 +183,7 @@
                         <!--COL FOR SECOND UPLOAD BUTTON-->
                         <div class="form-group">
                             <div class="fileinput fileinput-new" data-provides="fileinput" style="margin-top: 10px;">
-                                <span class="btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="File2"></span>
+                                <span class="btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file"  name="File2" onchange="ValidateSingleInput(this);"></span>
                                 <span class="fileinput-filename"></span>
                                 <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
                             </div>
@@ -255,5 +255,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jasny-bootstrap.min.js"></script>
+    <script src="/js/fileUploadValidation.js"></script>
 </body>
 </html>

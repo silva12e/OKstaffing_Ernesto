@@ -436,6 +436,5 @@ else
 //CAPABLE TO LIFT 50LBS
 $_SESSION['lift50'] = $_POST['lift50'];
 
-
 header('location:availLog.html');	
 ?>

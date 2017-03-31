@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-//All user input into session variables
 $_SESSION['jName'] =  $_POST['jobname']; 
 $_SESSION['jNumber'] = $_POST['jobnumber'];
 $_SESSION['fName'] = $_POST['fname'];
@@ -16,8 +15,9 @@ $_SESSION['postal'] = $_POST['postal'];
 $_SESSION['contactMethod'] = $_POST['optradio'];
 $_SESSION['howHear'] = $_POST['howHear'];
 
-//Next section of the Form
-header("location:eduEmpStat.html");
+//even: Temp, odd: Perm
+if($_SESSION['jNumber']%2==0)
+	header("location:eduEmpStat.html");	
+else
+	header("location:permForm.html");
 ?>
-
-
