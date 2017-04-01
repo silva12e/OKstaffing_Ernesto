@@ -1,6 +1,6 @@
 <?php
 session_start();
-$mysqli = mysqli_connect("localhost", "OkStaff", 'staffing', "okstaff");
+$mysqli = mysqli_connect("localhost", "OkStaff", "A11a11a11", "okstaff");
 include 'DBFunctionDatabase.php';
 
 //Function Table Creation Test
@@ -164,5 +164,5 @@ $permanent['perfectCandidate']."','".$permanent['salaryExpect']."','".$permanent
 tableInsert($mysqli, $permanentData, __LINE__);
 
 //Remove this header to check the page. 
-header("location: validate.php");
+header("location:validate.php");
 
